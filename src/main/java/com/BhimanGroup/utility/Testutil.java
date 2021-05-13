@@ -14,7 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Testutil {
 
-	public static String excelFilePath = "C:\\Users\\Lenovo\\eclipse-projects\\com.BhimanGroup\\src\\main\\java\\com\\"
+	public static String excelFilePath = "src\\main\\java\\com\\"
 			+ "BhimanaGroup\\testData\\BhimanGroup.xlsx";
 	public static String sheetName = "login";
 
