@@ -34,34 +34,38 @@ public class loginTest extends MainBase {
 	
 	}
 
-	//@Test(enabled=false,dataProvider="loginTestData",dataProviderClass=loginTest.class)
-	public void LoginPageDetailsTest(String UserName, String Password) {
-		//login.LoginDetails(UserName, Password);
-		/*String actualTitle=Constants.driver.getTitle();
-		String expectedTitle="Bhiman Admin";
-		Assert.assertEquals(actualTitle, expectedTitle);
-		System.err.println("Invalid username and password");*/
+	@Test(dataProvider="loginTestData",dataProviderClass=loginTest.class)
+	public void LoginWithValidInvaliTestdDP(String UserName, String Password) {
+	      login.LoginForDP(UserName, Password);
+	
+	
+		//String actualTitle=Constants.driver.getTitle();
+		//String expectedTitle="Bhiman Admin";
+		//Assert.assertEquals(actualTitle, expectedTitle);
+		//System.err.println("Invalid username and password");
 		
 		Assert.assertTrue(Constants.driver.findElement(By.xpath("//img[@class='logo-icon margin-r-10']")).isDisplayed(),"homepage not lounch");
 	}
 
-	//@DataProvider(name = "loginTestData")
+	@DataProvider(name = "loginTestData")
 	public Object[][] gettext() {
 		return Testutil.getValidInvalidTestDataFromExcel();
 
 	}
 	
-	@Test(priority=1)
-	public void ValidCredentailLoginTest() {
-		login.LoginDetails();
+	//@Test(priority=1)
+	//public void ValidCredentailLoginTest() {
+		
+		//login.LoginDetails();
 		//login.LoginDetails(Constants.prop.getProperty("username"),Constants.prop.getProperty("password"));
-		Assert.assertTrue(Constants.driver.findElement(By.xpath("//img[@class='logo-icon margin-r-10']")).isDisplayed(),"homepage not lounch");
-	}
+		//Assert.assertTrue(Constants.driver.findElement(By.xpath("//img[@class='logo-icon margin-r-10']")).isDisplayed(),"homepage not lounch");
+	//}
+	
 	
 
 	@AfterMethod
 	public void closeBrowser() {
-		//MainBase.tearDown();
+		MainBase.tearDown();
 	}
 
 }
