@@ -23,15 +23,24 @@ public class loginPage {
 		
 	}
 	
-	public void LoginDetails() {
-		//userName.click();
+	public void LoginDetails(String user, String pass) {
+		userName.click();
+		userName.clear();
+		userName.sendKeys(user);
 		
+		password.click();
+		password.clear();
+		password.sendKeys(pass);
+		Login.click();	
+	}
+	
+	public void validLoginDetails() {
+		userName.click();
+		userName.clear();
 		userName.sendKeys(Constants.prop.getProperty("username"));
-		//password.click();
-		
+		password.click();
+		password.clear();
 		password.sendKeys(Constants.prop.getProperty("password"));
 		Login.click();
-		
-		
 	}
 }

@@ -66,11 +66,18 @@ public class MainBase {
 			}
 			
 		}
+		public void browserSpecificInfo() {
+			openBrowser();
+			launchUrl();
+			windowMaximize();
+			deleteAllCookies();
+			
+		}
 		public static void launchUrl() {
 		     Constants.driver.get("http://103.50.162.196/testing/index.php");
 		}
 		
-		public static void maximize() {
+		public static void windowMaximize() {
 			Constants.driver.manage().window().maximize();
 		}
 		
