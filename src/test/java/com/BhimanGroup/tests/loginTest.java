@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -24,25 +25,21 @@ public class loginTest extends MainBase {
 		//loginTest test =new loginTest();
 	}
 
-	@BeforeMethod
+	@BeforeClass
 	public void setUp() {
-		openBrowser();
-		launchUrl();
-		maximize();
+		browserSpecificInfo();
 		login=PageFactory.initElements(Constants.driver, loginPage.class);
 		impilicitWait();
 	
 	}
 
 	@Test(dataProvider="loginTestData",dataProviderClass=loginTest.class)
-	public void LoginWithValidInvaliTestdDP(String UserName, String Password) {
-	      login.LoginForDP(UserName, Password);
-	
-	
-		//String actualTitle=Constants.driver.getTitle();
-		//String expectedTitle="Bhiman Admin";
-		//Assert.assertEquals(actualTitle, expectedTitle);
-		//System.err.println("Invalid username and password");
+	public void LoginPageDetailsTest(String UserName, String Password) {
+		login.LoginDetails(UserName, Password);
+		String actualTitle=Constants.driver.getTitle();
+		String expectedTitle="Bhiman Admin";
+		Assert.assertEquals(actualTitle, expectedTitle);
+		System.err.println("Invalid username and password");
 		
 		Assert.assertTrue(Constants.driver.findElement(By.xpath("//img[@class='logo-icon margin-r-10']")).isDisplayed(),"homepage not lounch");
 	}
@@ -53,19 +50,17 @@ public class loginTest extends MainBase {
 
 	}
 	
-	//@Test(priority=1)
-	//public void ValidCredentailLoginTest() {
-		
-		//login.LoginDetails();
-		//login.LoginDetails(Constants.prop.getProperty("username"),Constants.prop.getProperty("password"));
-		//Assert.assertTrue(Constants.driver.findElement(By.xpath("//img[@class='logo-icon margin-r-10']")).isDisplayed(),"homepage not lounch");
-	//}
-	
+//	@Test(priority=1)
+//	public void ValidCredentailLoginTest() {
+//		login.validLoginDetails();
+//		//login.LoginDetails(Constants.prop.getProperty("username"),Constants.prop.getProperty("password"));
+//		Assert.assertTrue(Constants.driver.findElement(By.xpath("//img[@class='logo-icon margin-r-10']")).isDisplayed(),"homepage not lounch");
+//	}
 	
 
 	@AfterMethod
 	public void closeBrowser() {
-		MainBase.tearDown();
+		//MainBase.tearDown();
 	}
 
 }

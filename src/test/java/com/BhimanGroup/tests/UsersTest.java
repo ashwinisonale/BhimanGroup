@@ -12,7 +12,7 @@ public class UsersTest extends MainBase {
 public void SetUp() {
 	openBrowser();
 	launchUrl();
-	maximize();
+	windowMaximize();
 	UsersTest test=new UsersTest();
 }
 
