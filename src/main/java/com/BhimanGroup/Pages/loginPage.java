@@ -15,17 +15,23 @@ public class loginPage {
 	@FindBy(id="password")
 	WebElement password;
 	
+	@FindBy(xpath="//button[@type='submit']")
+	WebElement loginClick;
+	
+	
 	public void loginPage() {
 		//PageFactory.initElements(Constants.driver, loginPage.class);
 		
 	}
 	
-	public void LoginDetails(String uname, String pass) {
+	public void LoginDetails() {
 		userName.click();
 		userName.clear();
-		userName.sendKeys("uname");
+		userName.sendKeys(Constants.prop.getProperty("username"));
 		password.click();
 		password.clear();
-		password.sendKeys("pass");
+		password.sendKeys(Constants.prop.getProperty("password"));
+		loginClick.click();
+		
 	}
 }

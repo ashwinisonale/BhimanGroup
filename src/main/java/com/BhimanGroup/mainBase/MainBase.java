@@ -21,7 +21,7 @@ public class MainBase {
 		static {
 			Constants.prop = new Properties();
 			try {
-				FileInputStream fis = new FileInputStream("C:\\Users\\Lenovo\\eclipse-projects\\com.BhimanGroup\\src\\main\\resources\\config.properties");
+				FileInputStream fis = new FileInputStream("C:\\Users\\ashwi\\eclipse\\BhimanGroup\\src\\main\\resources\\config.properties");
 				Constants.prop.load(fis);					
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
