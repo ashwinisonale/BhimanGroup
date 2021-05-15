@@ -66,7 +66,7 @@ public class MainBase {
 			}
 			
 		}
-		public void browserSpecificInfo() {
+		public static void browserSpecificInfo() {
 			openBrowser();
 			launchUrl();
 			windowMaximize();
