@@ -97,13 +97,11 @@ public class MainBase {
 		}
 		
 		public static void implicitWait() {
-<<<<<<< HEAD
-			Constants.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-=======
-			Constants.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
->>>>>>> 460b7a1b603b30b7719c868ed12212358ae49568
+			implicitWait(5);
 		}
-		
+		public static void implicitWait(int sec) {
+			Constants.driver.manage().timeouts().implicitlyWait(sec, TimeUnit.SECONDS);
+		}
 		public static void explicitWait() {
 			WebDriverWait waits = new WebDriverWait(Constants.driver, 10);
 		}
