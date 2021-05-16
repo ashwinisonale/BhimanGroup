@@ -42,7 +42,9 @@ public class loginTest extends MainBase {
 		Assert.assertEquals(actualTitle, expectedTitle);
 		System.err.println("Invalid username and password");*/
 		
-		Assert.assertTrue(Constants.driver.findElement(By.xpath("//img[@class='logo-icon margin-r-10']")).isDisplayed(),"homepage not lounch");
+		
+		boolean PNl = Constants.driver.findElement(By.xpath("//img[@class='logo-icon margin-r-10']")).isDisplayed();
+		Assert.assertTrue(PNl,"homepage not lounch");
 	}
 
 	@DataProvider(name = "loginTestData")
