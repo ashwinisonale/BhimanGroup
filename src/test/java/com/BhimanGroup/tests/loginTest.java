@@ -55,10 +55,10 @@ public class loginTest extends MainBase{
 		boolean text = login.verifyDashboardText();
 		Assert.assertTrue(text);
 		String title=Constants.driver.getTitle();
-		//System.out.println(title);
+		System.out.println(title);
 		
 		Assert.assertEquals(title, "Bhiman Group");
-		//login.clickOnLogoutLink();
+		login.clickOnLogoutLink();
 		
 	}
 	
