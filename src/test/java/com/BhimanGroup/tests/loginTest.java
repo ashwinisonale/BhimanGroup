@@ -36,7 +36,7 @@ public class loginTest extends MainBase{
 	//Please Enter Proper Mobile Number
 	//Your password must be at least 5 characters long 
 	
-	@Test(priority=1,dataProvider="InvalidloginTestData")
+	//@Test(priority=1,dataProvider="InvalidloginTestData")
 	public void invalidLoginCredentialsTest(String UserName, String Password) {
 		login.executeLoginFlow(UserName, Password);		
 	}
@@ -49,18 +49,23 @@ public class loginTest extends MainBase{
 	
 	@Test(priority=2)
 	public void ValidLoginCredentailTest() {
+		
 		login.executeLoginFlow(Constants.prop.getProperty("username"),Constants.prop.getProperty("password"));
 		
 		boolean text = login.verifyDashboardText();
 		Assert.assertTrue(text);
+		String title=Constants.driver.getTitle();
+		//System.out.println(title);
 		
-		login.clickOnLogoutLink();
+		Assert.assertEquals(title, "Bhiman Group");
+		//login.clickOnLogoutLink();
+		
 	}
 	
 
 	@AfterClass
 	public void closeBrowser() {
-		tearDown();
+		//tearDown();
 	}
 
 }
