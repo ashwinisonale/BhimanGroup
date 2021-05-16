@@ -2,5 +2,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="Test">
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  <classes>
+  	<class name="com.BhimanGroup.tests.LoginTest"/>
+  	<class name="com.BhimanGroup.tests.MasterTest"/>
+  </classes>
+  
+  </test> 
+</suite> 

@@ -1,7 +1,7 @@
 package com.BhimanGroup.tests;
 
 import com.BhimanGroup.Pages.UsersPage;
-import com.BhimanGroup.Pages.loginPage;
+
 import com.BhimanGroup.mainBase.MainBase;
 
 public class UsersTest extends MainBase {
