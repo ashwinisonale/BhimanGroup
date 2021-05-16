@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 
-public class loginPage {
+public class LoginPage {
 	
     @FindBy(id="username")
 	WebElement userName;
@@ -15,9 +15,6 @@ public class loginPage {
 	@FindBy(xpath="//button[contains(text(),'Login')]")
 	WebElement LoginButton;
 		
-	@FindBy(xpath="//div//h2[contains(text(),'Dashboard')]")
-	WebElement dashBoardText;
-	
 	@FindBy(xpath="//li//a[@class='dropdown-toggle']")
 	WebElement logOff;
 	
@@ -36,11 +33,8 @@ public class loginPage {
 		LoginButton.click();	
 	}
 	
-	public boolean verifyDashboardText() {
-		return dashBoardText.isDisplayed();
-	}
-	
 	public void clickOnLogoutLink() {
 	logOff.click();
+	logOut.click();
 	}
 }
