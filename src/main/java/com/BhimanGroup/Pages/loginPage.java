@@ -2,10 +2,7 @@ package com.BhimanGroup.Pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-import com.BhimanGroup.mainBase.Constants;
-import com.BhimanGroup.mainBase.MainBase;
 
 public class loginPage {
 	
@@ -15,17 +12,35 @@ public class loginPage {
 	@FindBy(id="password")
 	WebElement password;
 	
-	public void loginPage() {
-		//PageFactory.initElements(Constants.driver, loginPage.class);
+	@FindBy(xpath="//button[contains(text(),'Login')]")
+	WebElement LoginButton;
 		
-	}
+	@FindBy(xpath="//div//h2[contains(text(),'Dashboard')]")
+	WebElement dashBoardText;
 	
-	public void LoginDetails(String uname, String pass) {
+	@FindBy(xpath="//li//a[@class='dropdown-toggle']")
+	WebElement logOff;
+	
+	@FindBy(xpath="//a[@href=\"user-logout.php\"]")
+	WebElement logOut;
+	
+	public void executeLoginFlow(String user, String pass) {
 		userName.click();
 		userName.clear();
-		userName.sendKeys("uname");
+		userName.sendKeys(user);
+		
 		password.click();
 		password.clear();
-		password.sendKeys("pass");
+		password.sendKeys(pass);
+		
+		LoginButton.click();	
+	}
+	
+	public boolean verifyDashboardText() {
+		return dashBoardText.isDisplayed();
+	}
+	
+	public void clickOnLogoutLink() {
+		logOff.click();
 	}
 }

@@ -21,7 +21,7 @@ public class MainBase {
 		static {
 			Constants.prop = new Properties();
 			try {
-				FileInputStream fis = new FileInputStream("C:\\Users\\Lenovo\\eclipse-projects\\com.BhimanGroup\\src\\main\\resources\\config.properties");
+				FileInputStream fis = new FileInputStream("src\\main\\resources\\config.properties");
 				Constants.prop.load(fis);					
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
@@ -66,11 +66,18 @@ public class MainBase {
 			}
 			
 		}
+		public static void browserSpecificInfo() {
+			openBrowser();
+			launchUrl();
+			windowMaximize();
+			deleteAllCookies();
+			
+		}
 		public static void launchUrl() {
 		     Constants.driver.get("http://103.50.162.196/testing/index.php");
 		}
 		
-		public static void maximize() {
+		public static void windowMaximize() {
 			Constants.driver.manage().window().maximize();
 		}
 		
