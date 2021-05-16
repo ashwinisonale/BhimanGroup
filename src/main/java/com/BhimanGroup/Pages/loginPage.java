@@ -41,6 +41,6 @@ public class loginPage {
 	}
 	
 	public void clickOnLogoutLink() {
-		logOff.click();
+	logOff.click();
 	}
 }
