@@ -21,7 +21,7 @@ public class MasterTest extends MainBase{
 		
 		String user = Constants.prop.getProperty("username");
 		String pass = Constants.prop.getProperty("password");
-		loginFlow(user, pass);
+		LoginFlow(user, pass);
 		
 		master = PageFactory.initElements(Constants.driver, MasterPage.class);
 		
