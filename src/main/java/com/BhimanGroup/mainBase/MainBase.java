@@ -12,7 +12,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.BhimanGroup.Pages.LoginPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -66,15 +69,23 @@ public class MainBase {
 			}
 			
 		}
+		
 		public static void browserSpecificInfo() {
 			openBrowser();
 			launchUrl();
 			windowMaximize();
 			deleteAllCookies();
-			
+			impilicitWait();
 		}
+		
+		public static void loginFlow(String user, String pass) {
+			browserSpecificInfo();
+			LoginPage loginPage = PageFactory.initElements(Constants.driver, LoginPage.class);
+			loginPage.executeLoginFlow(user, pass);
+		}
+		
 		public static void launchUrl() {
-		     Constants.driver.get("http://103.50.162.196/testing/index.php");
+		     Constants.driver.get(Constants.prop.getProperty("url"));
 		}
 		
 		public static void windowMaximize() {
@@ -86,7 +97,7 @@ public class MainBase {
 		}
 		
 		public static void impilicitWait() {
-			Constants.driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+			Constants.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
 		
 		public static void explicitWait() {
