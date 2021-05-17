@@ -54,7 +54,7 @@ public class loginTest extends MainBase{
 		boolean text = login.verifyDashboardText();
 		Assert.assertTrue(text);
 		
-		login.clickOnLogoutLink();
+		//login.clickOnLogoutLink();
 	}
 	
 

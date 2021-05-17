@@ -7,14 +7,15 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.BhimanGroup.Pages.Masters;
+import com.BhimanGroup.Pages.Master;
+
 import com.BhimanGroup.Pages.loginPage;
 import com.BhimanGroup.mainBase.Constants;
 import com.BhimanGroup.mainBase.MainBase;
 
 public class MastersTest extends MainBase {
 
-	Masters page=new Masters();
+	Master page=new Master();
 	loginTest login;
 	
 	public MastersTest() {
@@ -25,7 +26,7 @@ public class MastersTest extends MainBase {
 	public void setUp() {
 	login=new loginTest();
 	login.setUp();
-	login.loginWithValidCredential();
+	login.ValidLoginCredentailTest();
 	
 	   }
 	
@@ -34,6 +35,7 @@ public class MastersTest extends MainBase {
 	public void clicktoMasters() throws InterruptedException {
          page.moveToMasters();
       }
+	
 	@Test
 	public void getAllElementList() {
 		page.allElementsFromMastersList("Customers");

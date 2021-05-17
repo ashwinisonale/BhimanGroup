@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.BhimanGroup.tests.loginTest">
+      <class name="com.BhimanGroup.tests.customerTest">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="LoginPageDetailsTest"/>
+          <include name="enterCustomerDetails"/>
           <include name="setUp"/>
+          <include name="clickOnCustomer"/>
         </methods>
-      </class> <!-- com.BhimanGroup.tests.loginTest -->
+      </class> <!-- com.BhimanGroup.tests.customerTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
