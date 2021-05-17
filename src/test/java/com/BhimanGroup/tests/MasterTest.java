@@ -5,20 +5,22 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.BhimanGroup.Pages.LoginPage;
 import com.BhimanGroup.Pages.MasterPage;
 import com.BhimanGroup.mainBase.Constants;
 import com.BhimanGroup.mainBase.MainBase;
 
 public class MasterTest extends MainBase{
-	LoginTest test;
+	LoginPage loginpage;
+	
 	MasterPage master = null;
 
 	@BeforeClass
 	public void setUp() {
-
+		browserSpecificInfo();
 		String user = Constants.prop.getProperty("username");
 		String pass = Constants.prop.getProperty("password");
-		loginFlow(user, pass);
+		loginpage.executeLoginFlow(user, pass);
 		
 		master = PageFactory.initElements(Constants.driver, MasterPage.class);
 		
