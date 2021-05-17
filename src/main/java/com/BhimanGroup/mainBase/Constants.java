@@ -21,6 +21,7 @@ public class Constants {
 		public static Properties prop;
 		public static FileInputStream fis;
 		public static Actions action;
+	
 		public static AShot ashot;
 	
 		public  static Select select;
