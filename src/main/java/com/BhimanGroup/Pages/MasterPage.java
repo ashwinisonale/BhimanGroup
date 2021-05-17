@@ -35,8 +35,7 @@ public class MasterPage{
 
 	}
          public void clickOnUserTab() {
-		
-		Constants.driver.findElement(users).click();
+		 Constants.driver.findElement(users).click();
 
 	}	
 	public void clickOnBankTab() {
