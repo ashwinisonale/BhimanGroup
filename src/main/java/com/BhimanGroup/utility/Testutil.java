@@ -16,9 +16,10 @@ public class Testutil {
 
 	public static String excelFilePath = "src\\main\\java\\com\\"
 			+ "BhimanaGroup\\testData\\BhimanGroup.xlsx";
-	//public static String sheetName = "login";
+	public static String sheetName = "login";
 	
-	public static String sheetName = "masterTabFunction";
+	//public static String sheetName = "masterTabFunction";
+	
 	public static Object[][] getValidInvalidTestDataFromExcel() {
 		Object[][] data = null;
 		try {
