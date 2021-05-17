@@ -17,10 +17,11 @@ public class MasterTest extends MainBase{
 
 	@BeforeClass
 	public void setUp() {
-		browserSpecificInfo();
+		
+		
 		String user = Constants.prop.getProperty("username");
 		String pass = Constants.prop.getProperty("password");
-		loginpage.executeLoginFlow(user, pass);
+		loginFlow(user, pass);
 		
 		master = PageFactory.initElements(Constants.driver, MasterPage.class);
 		
