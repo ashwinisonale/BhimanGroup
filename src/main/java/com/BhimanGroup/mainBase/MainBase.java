@@ -75,7 +75,7 @@ public class MainBase {
 			launchUrl();
 			windowMaximize();
 			deleteAllCookies();
-			impilicitWait();
+			implicitWait();
 		}
 		
 		public static void loginFlow(String user, String pass) {
@@ -96,7 +96,7 @@ public class MainBase {
 			Constants.driver.manage().deleteAllCookies();
 		}
 		
-		public static void impilicitWait() {
+		public static void implicitWait() {
 			Constants.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
 		
