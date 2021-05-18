@@ -18,7 +18,7 @@ public class LoginTest extends MainBase{
 	public void setUp() {
 		browserSpecificInfo();
 		login=PageFactory.initElements(Constants.driver, LoginPage.class);
-		impilicitWait();
+		implicitWait();
 	}
 	
 	@Test(priority=1,dataProvider="InvalidloginTestData")
