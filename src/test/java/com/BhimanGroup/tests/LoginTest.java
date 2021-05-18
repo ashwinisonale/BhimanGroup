@@ -18,7 +18,7 @@ public class LoginTest extends MainBase{
 	public void setUp() {
 		browserSpecificInfo();
 		login=PageFactory.initElements(Constants.driver, LoginPage.class);
-		impilicitWait();
+		implicitWait();
 	}
 	
 	@Test(priority=1,dataProvider="InvalidloginTestData")
@@ -28,7 +28,10 @@ public class LoginTest extends MainBase{
 
 	@DataProvider(name = "InvalidloginTestData")
 	public Object[][] gettext() {
-		return Testutil.getValidInvalidTestDataFromExcel();
+		String excelFilePath = "src\\main\\java\\com\\"
+				+ "BhimanaGroup\\testData\\BhimanGroup.xlsx";
+		String sheetName = "login";
+		return Testutil.getValidInvalidTestDataFromExcel(excelFilePath, sheetName);
 	}
 	
 	@Test(priority=2)

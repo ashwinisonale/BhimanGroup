@@ -14,21 +14,20 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Testutil {
 
-	public static String excelFilePath = "src\\main\\java\\com\\"
-			+ "BhimanaGroup\\testData\\BhimanGroup.xlsx";
-	public static String sheetName = "login";
+//	public static String excelFilePath = "src\\main\\java\\com\\"
+//			+ "BhimanaGroup\\testData\\BhimanGroup.xlsx";
+//	public static String sheetName = "login";
 	
 	//public static String sheetName = "masterTabFunction";
 	
-	public static Object[][] getValidInvalidTestDataFromExcel() {
+	public static Object[][] getValidInvalidTestDataFromExcel(String path, String sheetName) {
 		Object[][] data = null;
 		try {
-			FileInputStream inputstream = new FileInputStream(new File(excelFilePath));
+			FileInputStream inputstream = new FileInputStream(new File(path));
 			XSSFWorkbook book = new XSSFWorkbook(inputstream);
 			Sheet sheet = book.getSheet(sheetName);
 			int rowCount = sheet.getLastRowNum();
 			DataFormatter formatter=new DataFormatter();
-			
 			
 			data = new Object[rowCount][2];
 			Iterator<Row> rowIterator = sheet.iterator();
