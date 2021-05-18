@@ -31,7 +31,8 @@ public class LoginTest extends MainBase{
 		String excelFilePath = "src\\main\\java\\com\\"
 				+ "BhimanaGroup\\testData\\BhimanGroup.xlsx";
 		String sheetName = "login";
-		return Testutil.getValidInvalidTestDataFromExcel(excelFilePath, sheetName);
+		Integer colNumber=2;
+		return Testutil.getValidInvalidTestDataFromExcel(excelFilePath, sheetName, colNumber);
 	}
 	
 	@Test(priority=2)

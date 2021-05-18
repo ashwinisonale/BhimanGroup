@@ -20,7 +20,7 @@ public class Testutil {
 	
 	//public static String sheetName = "masterTabFunction";
 	
-	public static Object[][] getValidInvalidTestDataFromExcel(String path, String sheetName) {
+	public static Object[][] getValidInvalidTestDataFromExcel(String path, String sheetName,Integer colNumber) {
 		Object[][] data = null;
 		try {
 			FileInputStream inputstream = new FileInputStream(new File(path));
@@ -29,7 +29,7 @@ public class Testutil {
 			int rowCount = sheet.getLastRowNum();
 			DataFormatter formatter=new DataFormatter();
 			
-			data = new Object[rowCount][2];
+			data = new Object[rowCount][colNumber];
 			Iterator<Row> rowIterator = sheet.iterator();
 			int nums = 0;
 			rowIterator.next();
