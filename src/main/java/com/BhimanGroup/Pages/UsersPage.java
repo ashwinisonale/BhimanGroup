@@ -47,6 +47,14 @@ public class UsersPage {
 	By userPassword=By.name("password");
 	By usersConfirmPassword=By.name("confirm_password");
 
+    By submit=By.name("add_user");
+    
+    By Search=By.xpath("//input[@type='search']");
+    
+    
+    
+    
+    
 
 
 	public UsersPage() {
@@ -56,13 +64,13 @@ public class UsersPage {
 	public void AddUserButtonTab(){
 		//UsersTap.click();
 		//addUser.click();
-		Actions action=new Actions(Constants.driver);
-		action.moveToElement(Constants.driver.findElement(AddUserButton)).click().build().perform();
+//		Actions action=new Actions(Constants.driver);
+//		action.moveToElement(Constants.driver.findElement(AddUserButton)).click().build().perform();
 	}
 
 	public void userPagePersonalDetails() {
 		Constants.driver.findElement(name).sendKeys("Ashwini");
-		Constants.driver.findElement(mobileNo).sendKeys("9876541230");
+		Constants.driver.findElement(mobileNo).sendKeys("7776007838");
 		Constants.driver.findElement(email).sendKeys("ash@gmail.com");
 
 		select=new Select(Constants.driver.findElement(role));
@@ -90,18 +98,13 @@ public class UsersPage {
 
 	public void userDocuments() {
 
-		//		JavascriptExecutor js=((JavascriptExecutor)Constants.driver);
-		//		js.executeScript("window.scroll(0,600)");
-		
-	    Constants.driver.findElement(Choosefile).sendKeys("C:\\Users\\Lenovo\\Desktop\\Resume_Ashwini.pdf");
-		//chooseFile.sendKeys("C:\\Users\\Lenovo\\Desktop\\Resume_Ashwini.pdf");
-		Constants.driver.findElement(agreement).sendKeys("C:\\Users\\Lenovo\\Desktop\\Resume_Ashwini.pdf");
+		//JavascriptExecutor js=((JavascriptExecutor)Constants.driver);
+		//js.executeScript("window.scroll(0,600)");
+		Constants.driver.findElement(Choosefile).sendKeys("C:\\Users\\Lenovo\\Desktop\\Resume_Ashwini.pdf");
+	    Constants.driver.findElement(agreement).sendKeys("C:\\Users\\Lenovo\\Desktop\\Resume_Ashwini.pdf");
 		Constants.driver.findElement(kyc).sendKeys("C:\\Users\\Lenovo\\Desktop\\Resume_Ashwini.pdf");
 
 	}
-
-
-
 
 	public void usersFatherDetails() {
 		Constants.driver.findElement(fatherName).sendKeys("madhavrao");
@@ -116,9 +119,23 @@ public class UsersPage {
 
 		Constants.driver.findElement(userPassword).sendKeys("bholenath");
 		Constants.driver.findElement(usersConfirmPassword).sendKeys("bholenath");
-
-
-
+	}
+	
+	public void userSubmitTab() {
+		Constants.driver.findElement(submit).click();
 	}
 
+	
+	public void searchButtonOnUsersPage(String value ) {
+		//Constants.driver.findElement(Search).click();
+		Constants.driver.findElement(Search).sendKeys(value);
+		
+	}
+ public void addUserDetailsPage(){
+	 Constants.driver.findElement(AddUserButton).click();
+	 
+	 
+
+}
+	
 }
