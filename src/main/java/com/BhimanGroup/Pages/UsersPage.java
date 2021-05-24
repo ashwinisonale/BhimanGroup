@@ -36,8 +36,8 @@ public class UsersPage {
 	By ifsc=By.id("ifsc_code");
 
 	By Choosefile=By.xpath("//input[@id='resume']");
-    By agreement=By.id("agreement");
-    By kyc=By.name("kyc");
+	By agreement=By.id("agreement");
+	By kyc=By.name("kyc");
 
 	By fatherName=By.id("father_name");
 	By fatherMobilerNo=By.id("father_mobile_no");
@@ -47,14 +47,9 @@ public class UsersPage {
 	By userPassword=By.name("password");
 	By usersConfirmPassword=By.name("confirm_password");
 
-    By submit=By.name("add_user");
-    
-    By Search=By.xpath("//input[@type='search']");
-    
-    
-    
-    
-    
+	By submit=By.name("add_user");
+
+	By Search=By.xpath("//input[@type='search']");
 
 
 	public UsersPage() {
@@ -63,79 +58,116 @@ public class UsersPage {
 
 	public void AddUserButtonTab(){
 		//UsersTap.click();
-		//addUser.click();
-//		Actions action=new Actions(Constants.driver);
-//		action.moveToElement(Constants.driver.findElement(AddUserButton)).click().build().perform();
+		Constants.driver.findElement(AddUserButton).click();
 	}
-
-	public void userPagePersonalDetails() {
-		Constants.driver.findElement(name).sendKeys("Ashwini");
-		Constants.driver.findElement(mobileNo).sendKeys("7776007838");
-		Constants.driver.findElement(email).sendKeys("ash@gmail.com");
+	public void userPagePersonalDetails(String Name,String MobileNumber,String EmailId,String Role,String JoiningDate,String BloodGroup) {
+		Constants.driver.findElement(name).sendKeys(Name);
+		Constants.driver.findElement(mobileNo).sendKeys(MobileNumber);
+		Constants.driver.findElement(email).sendKeys(EmailId);
 
 		select=new Select(Constants.driver.findElement(role));
-		select.selectByVisibleText("admin");
+		select.selectByVisibleText(Role);
 
 		//Constants.select.selectByVisibleText("admin");
 
 		Constants.driver.findElement(joiningDate).click();
-		Constants.driver.findElement(joiningDate).sendKeys("12-07-2021");
+		Constants.driver.findElement(joiningDate).sendKeys(JoiningDate);
 
 
 		Constants.driver.findElement(bloodGroup).click();
 		Select select1=new Select(Constants.driver.findElement(bloodGroup));
-		select1.selectByVisibleText("O positive");	
+		select1.selectByVisibleText(BloodGroup);	
 		// Constants.select.selectByVisibleText("O positive");
 	}
 
-	public void usersBankDetails() {
+	public void usersBankDetails(String BankName,String AccountNumber,String IFSCCode) {
 
-		Constants.driver.findElement(bankName).sendKeys("JalgavBank");
-		Constants.driver.findElement(accountNumber).sendKeys("010101011");
-		Constants.driver.findElement(ifsc).sendKeys("JJSB0000033");
+		Constants.driver.findElement(bankName).sendKeys(BankName);
+		Constants.driver.findElement(accountNumber).sendKeys(AccountNumber);
+		Constants.driver.findElement(ifsc).sendKeys(IFSCCode);
 
 	}
 
-	public void userDocuments() {
+	public void userDocuments(String Resume,String Agreement,String KYC) {
 
 		//JavascriptExecutor js=((JavascriptExecutor)Constants.driver);
 		//js.executeScript("window.scroll(0,600)");
 		Constants.driver.findElement(Choosefile).sendKeys("C:\\Users\\Lenovo\\Desktop\\Resume_Ashwini.pdf");
-	    Constants.driver.findElement(agreement).sendKeys("C:\\Users\\Lenovo\\Desktop\\Resume_Ashwini.pdf");
+		Constants.driver.findElement(agreement).sendKeys("C:\\Users\\Lenovo\\Desktop\\Resume_Ashwini.pdf");
 		Constants.driver.findElement(kyc).sendKeys("C:\\Users\\Lenovo\\Desktop\\Resume_Ashwini.pdf");
 
 	}
 
-	public void usersFatherDetails() {
-		Constants.driver.findElement(fatherName).sendKeys("madhavrao");
-		Constants.driver.findElement(fatherMobilerNo).sendKeys("9685746352");
-		Constants.driver.findElement(fatherOccupation).sendKeys("highSchoolTeacher");
+	public void usersFatherDetails(String FatherName,String	MobileNumber,String FatherOccupation) {
+		Constants.driver.findElement(fatherName).sendKeys(FatherName);
+		Constants.driver.findElement(fatherMobilerNo).sendKeys(MobileNumber);
+		Constants.driver.findElement(fatherOccupation).sendKeys(FatherOccupation);
 	}
 
-	public void usersOtherDetails() {
+	public void usersOtherDetails(String Password,String ConfirmPassword) {
 
 		Select select2=new Select(Constants.driver.findElement(usersStaus));
 		select2.selectByVisibleText("Active");
 
-		Constants.driver.findElement(userPassword).sendKeys("bholenath");
-		Constants.driver.findElement(usersConfirmPassword).sendKeys("bholenath");
+		Constants.driver.findElement(userPassword).sendKeys(Password);
+		Constants.driver.findElement(usersConfirmPassword).sendKeys(ConfirmPassword);
 	}
-	
+
 	public void userSubmitTab() {
 		Constants.driver.findElement(submit).click();
 	}
 
-	
+
+
+	//	public void userPagePersonalDetails() {
+	//		Constants.driver.findElement(name).sendKeys("Ashwini");
+	//		Constants.driver.findElement(mobileNo).sendKeys("9887766512");
+	//		Constants.driver.findElement(email).sendKeys("ash@gmail.com");
+	//		select=new Select(Constants.driver.findElement(role));
+	//		select.selectByVisibleText("admin");
+	//		//Constants.select.selectByVisibleText("admin");
+	//		Constants.driver.findElement(joiningDate).click();
+	//		Constants.driver.findElement(joiningDate).sendKeys("12-07-2021");
+	//		Constants.driver.findElement(bloodGroup).click();
+	//		Select select1=new Select(Constants.driver.findElement(bloodGroup));
+	//		select1.selectByVisibleText("O positive");	
+	//		// Constants.select.selectByVisibleText("O positive");
+	//	}
+	//	public void usersBankDetails() {
+	//		Constants.driver.findElement(bankName).sendKeys("JalgavBank");
+	//		Constants.driver.findElement(accountNumber).sendKeys("010101011");
+	//		Constants.driver.findElement(ifsc).sendKeys("JJSB0000033");
+	//	}
+	//	public void userDocuments() {
+	//		//JavascriptExecutor js=((JavascriptExecutor)Constants.driver);
+	//		//js.executeScript("window.scroll(0,600)");
+	//		Constants.driver.findElement(Choosefile).sendKeys("C:\\Users\\Lenovo\\Desktop\\Resume_Ashwini.pdf");
+	//		Constants.driver.findElement(agreement).sendKeys("C:\\Users\\Lenovo\\Desktop\\Resume_Ashwini.pdf");
+	//		Constants.driver.findElement(kyc).sendKeys("C:\\Users\\Lenovo\\Desktop\\Resume_Ashwini.pdf");
+	//	}
+	//	public void usersFatherDetails() {
+	//		Constants.driver.findElement(fatherName).sendKeys("madhavrao");
+	//		Constants.driver.findElement(fatherMobilerNo).sendKeys("9685746352");
+	//		Constants.driver.findElement(fatherOccupation).sendKeys("highSchoolTeacher");
+	//	}
+	//	public void usersOtherDetails() {
+	//		Select select2=new Select(Constants.driver.findElement(usersStaus));
+	//		select2.selectByVisibleText("Active");
+	//		Constants.driver.findElement(userPassword).sendKeys("bholenath");
+	//		Constants.driver.findElement(usersConfirmPassword).sendKeys("bholenath");
+	//	}
+	//	public void userSubmitTab() {
+	//		Constants.driver.findElement(submit).click();
+	//	}
+	//	
+     /*
+	 * For Search Button on users page
+	 */
+
 	public void searchButtonOnUsersPage(String value ) {
 		//Constants.driver.findElement(Search).click();
 		Constants.driver.findElement(Search).sendKeys(value);
-		
 	}
- public void addUserDetailsPage(){
-	 Constants.driver.findElement(AddUserButton).click();
-	 
-	 
-
-}
+	
 	
 }
