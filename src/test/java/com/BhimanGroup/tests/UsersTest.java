@@ -39,11 +39,13 @@ public class UsersTest extends MainBase {
 
 	}
 
-	@Test(priority = 1)
+	//@Test(priority = 1)
 	public void AddUserButtonTest() {
 		implicitWait();
 		userPage.AddUserButtonTab();
 	}
+	
+	
 
 //	@Test(priority=2)
 //	public void usersFormDetailsPageTest()
@@ -57,7 +59,7 @@ public class UsersTest extends MainBase {
 //		userPage.usersOtherDetails();
 //		userPage.userSubmitTab();
 
-	@Test(priority=2,dataProvider="UsersDataForNewRecords")
+	//@Test(priority=2,dataProvider="UsersDataForNewRecords")
 	public void usersFormDetailsPageTest(String Name,String MobileNumber,String EmailId,String Role,
 			String JoiningDate,String BloodGroup,String BankName,String AccountNumber,String IFSCCode,
 			String Resume,String Agreement,String KYC,String FatherName,String MobileNumber1,String FatherOccupation,
@@ -97,7 +99,7 @@ public class UsersTest extends MainBase {
 	
 	}
 
-	@DataProvider(name = "UsersDataForNewRecords")
+	//@DataProvider(name = "UsersDataForNewRecords")
 	public Object[][] gettext() {
 		String excelFilePath = "src\\main\\java\\com\\" + "BhimanaGroup\\testData\\BhimanGroup.xlsx";
 		String sheetName = "UsersDetails";
@@ -105,12 +107,14 @@ public class UsersTest extends MainBase {
 		return Testutil.getValidInvalidTestDataFromExcel(excelFilePath, sheetName, colNumber);
 	}
 
-	//@Test(priority = 3)
+	@Test(priority = 3)
 	public void searchButtonOnUsersTest() {
 		String Title = Constants.driver.getTitle();
 		// Assert.assertEquals(Title, "user");
-		// implicitWait();
-		userPage.searchButtonOnUsersPage("Sucheta");
+		// implicitWait()
+		userPage.searchButtonOnUsersPage("sucheta");
+		userPage.ClickOnViewRecordButton();
+		
 		screen.takeScreenShot("");
 
 	}
