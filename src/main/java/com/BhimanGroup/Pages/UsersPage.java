@@ -50,15 +50,14 @@ public class UsersPage {
 	By submit=By.name("add_user");
 
 	By Search=By.xpath("//input[@type='search']");
-	
+
 	By ViewButton=By.xpath("//i[@class=' fa fa-eye']");
-	
-	
-	
-	
-	
-	
-	
+	By EdidButton=By.xpath("//i[@class=' fa fa-pencil']");
+	By DeleteButton=By.xpath("//i[@class=' fa fa-trash']");
+
+
+
+
 
 
 	public UsersPage() {
@@ -169,32 +168,32 @@ public class UsersPage {
 	//		Constants.driver.findElement(submit).click();
 	//	}
 	//	
-     /*
+	/*
 	 * For Search Button on users page
 	 */
 
 	public void searchButtonOnUsersPage(String value ) {
 		//Constants.driver.findElement(Search).click();
 		Constants.driver.findElement(Search).sendKeys(value);
-		
+
 	}
-	
-	public void ClickOnViewRecordButton() {
+
+	public void clickOnViewRecordButton() {
+
 		//Constants.driver.findElement(Search).sendKeys(value);
 		Constants.driver.findElement(ViewButton).click();
-	}
-	
 
-	public void clickOnEditRecordButton() {
-		
-		
 	}
-	
-	public void clickOnDeleteRecordButton() {
-		
-		
+	public void clickOnEditRecordButton(){
+		Constants.driver.findElement(EdidButton).click();
+
 	}
-	
-	
-	
+	public void clickOnDeleteRecordButton(){
+		JavascriptExecutor js=((JavascriptExecutor)Constants.driver);
+		js.executeScript("window.scroll(0,600)");
+		Constants.driver.findElement(DeleteButton).click();
+	}
+
+
+
 }

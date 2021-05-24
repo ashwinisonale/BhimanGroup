@@ -112,12 +112,27 @@ public class UsersTest extends MainBase {
 		String Title = Constants.driver.getTitle();
 		// Assert.assertEquals(Title, "user");
 		// implicitWait()
-		userPage.searchButtonOnUsersPage("sucheta");
-		userPage.ClickOnViewRecordButton();
-		
-		screen.takeScreenShot("");
-
+		userPage.searchButtonOnUsersPage("nagesh");
 	}
+	
+	//@Test(priority = 4)
+	public void clickOnViewRecordButtonTest() {
+		userPage.clickOnDeleteRecordButton();
+	}
+	
+	//@Test(priority=5)
+	public void clickOnEditRecordButtonTest(){
+		userPage.clickOnEditRecordButton();
+		userPage.userSubmitTab();
+		//screen.takeScreenShot("");
+}
+	@Test(priority=6)
+	public void clickOnDeleteRecordButtonTest() {
+		userPage.clickOnDeleteRecordButton();
+	}
+	
+	
+	
 
 	@AfterClass
 	public void closeWindow() {
