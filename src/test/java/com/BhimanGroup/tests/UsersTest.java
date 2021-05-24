@@ -24,9 +24,6 @@ public class UsersTest extends MainBase {
 		String pass = Constants.prop.getProperty("password");
 		loginFlow(user, pass);
 		userPage=PageFactory.initElements(Constants.driver, UsersPage.class);
-		
-		
-		
 		masterPage.clickOnMasterTab();
 		masterPage.clickOnUserTab();
 	}
