@@ -16,14 +16,14 @@ import com.BhimanGroup.mainBase.Constants;
 public class screenShot {
 
 	
-	public static void takeScreenShot(){
+	public static void takeScreenShot(String testMethodname){
 		
 		File file=((TakesScreenshot)Constants.driver).getScreenshotAs(OutputType.FILE);
 		try {
 			
 			FileUtils.copyFile(file, new File("C:\\Users\\Lenovo\\eclipse-projects\\com.BhimanGroup"
 					+ ""
-					+ "\\src\\main\\resources\\screenShot\\"+getCurrentDateOrTime()+".png"));
+					+ "\\src\\main\\resources\\screenShot\\"+testMethodname+".png"));
 		
 		} catch (IOException e) {
 			
@@ -37,6 +37,11 @@ public class screenShot {
 		DateFormat formate=new SimpleDateFormat("mm_dd_yyyy_hh_mm_ss");
 		Date currentdate=new Date();
 		return formate.format(currentdate);
+	}
+	
+	public static void failedTestCase(String testMethodname) {
+		takeScreenShot(testMethodname );
+			
 	}
 	
 }
