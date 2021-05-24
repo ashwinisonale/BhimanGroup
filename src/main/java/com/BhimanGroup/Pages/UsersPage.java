@@ -50,6 +50,15 @@ public class UsersPage {
 	By submit=By.name("add_user");
 
 	By Search=By.xpath("//input[@type='search']");
+	
+	By ViewButton=By.xpath("//i[@class=' fa fa-eye']");
+	
+	
+	
+	
+	
+	
+	
 
 
 	public UsersPage() {
@@ -167,7 +176,25 @@ public class UsersPage {
 	public void searchButtonOnUsersPage(String value ) {
 		//Constants.driver.findElement(Search).click();
 		Constants.driver.findElement(Search).sendKeys(value);
+		
 	}
+	
+	public void ClickOnViewRecordButton() {
+		//Constants.driver.findElement(Search).sendKeys(value);
+		Constants.driver.findElement(ViewButton).click();
+	}
+	
+
+	public void clickOnEditRecordButton() {
+		
+		
+	}
+	
+	public void clickOnDeleteRecordButton() {
+		
+		
+	}
+	
 	
 	
 }
