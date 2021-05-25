@@ -36,5 +36,6 @@ public class LoginPage {
 	public void clickOnLogoutLink() {
 	logOff.click();
 	logOut.click();
+	
 	}
 }

@@ -99,9 +99,11 @@ public class MainBase {
 		public static void implicitWait() {
 			implicitWait(5);
 		}
+		
 		public static void implicitWait(int sec) {
 			Constants.driver.manage().timeouts().implicitlyWait(sec, TimeUnit.SECONDS);
 		}
+		
 		public static void explicitWait() {
 			WebDriverWait waits = new WebDriverWait(Constants.driver, 10);
 		}

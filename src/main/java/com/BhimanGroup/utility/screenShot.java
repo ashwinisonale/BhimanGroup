@@ -15,7 +15,6 @@ import com.BhimanGroup.mainBase.Constants;
 
 public class screenShot {
 
-	
 	public static void takeScreenShot(String testMethodname){
 		
 		File file=((TakesScreenshot)Constants.driver).getScreenshotAs(OutputType.FILE);
