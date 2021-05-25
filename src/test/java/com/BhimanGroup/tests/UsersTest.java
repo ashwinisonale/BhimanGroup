@@ -120,13 +120,13 @@ public class UsersTest extends MainBase {
 		userPage.clickOnDeleteRecordButton();
 	}
 	
-	//@Test(priority=5)
+	//@Test(priority=5)	
 	public void clickOnEditRecordButtonTest(){
 		userPage.clickOnEditRecordButton();
 		userPage.userSubmitTab();
+		
 		//screen.takeScreenShot("");
 }
-	@Test(priority=6)
 	public void clickOnDeleteRecordButtonTest() {
 		userPage.clickOnDeleteRecordButton();
 	}

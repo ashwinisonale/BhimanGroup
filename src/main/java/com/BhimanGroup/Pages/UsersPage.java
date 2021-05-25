@@ -186,11 +186,14 @@ public class UsersPage {
 	}
 	public void clickOnEditRecordButton(){
 		Constants.driver.findElement(EdidButton).click();
+		JavascriptExecutor js=((JavascriptExecutor)Constants.driver);
+		js.executeScript("window.scroll(0,700)");
+		userSubmitTab();
+		
 
 	}
 	public void clickOnDeleteRecordButton(){
-		JavascriptExecutor js=((JavascriptExecutor)Constants.driver);
-		js.executeScript("window.scroll(0,600)");
+		
 		Constants.driver.findElement(DeleteButton).click();
 	}
 
