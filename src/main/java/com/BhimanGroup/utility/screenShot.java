@@ -39,6 +39,7 @@ public class screenShot {
 	}
 	
 	
+	
 	public static void failedTestCase(String testMethodname) {
 		takeScreenShot(testMethodname );
 			

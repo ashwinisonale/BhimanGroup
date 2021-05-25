@@ -81,7 +81,7 @@ public class BankTest extends MainBase{
   
 	@Test(priority=3)
 	public void NewScreenshot() {
-
+      
 
 		AShot ashot=new AShot();
 		Screenshot sc=ashot.takeScreenshot(Constants.driver);
