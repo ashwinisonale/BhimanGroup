@@ -46,6 +46,7 @@ public class MasterPage{
 
 	public void clickOnBranchesTab() {
 		clickOnMasterTab();
+		
 		Constants.driver.findElement(branches).click();
 
 	}
