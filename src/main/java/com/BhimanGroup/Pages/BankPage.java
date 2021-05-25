@@ -14,24 +14,42 @@ public class BankPage extends MainBase{
 	
 
 	By master=By.xpath("//a//span[contains(text(),'Masters')]");
+	
 	By Bank=By.xpath("//li//a[contains(text(),'Banks ')]");
+	
 	By AddBank = By.xpath("//a[@id='add_btn']");
+	
 	@FindBy(xpath="//div//h2[contains(text(),'Banks')]")
 	WebElement title;
+	
 	By BankName= By.xpath("//input[@name='bank_name']");
+	
 	By AccountName= By.xpath("//input[@name='account_name']");
+	
 	By AccountNo = By.xpath("//input[@name='account_no']");
+	
 	By BankAccountType = By.xpath("//select[@name='bank_account_type']");
+	
 	By IFSCCode= By.xpath("//input[@name='ifsc_code']");	
+	
 	By MICRCode = By.xpath("//input[@name='micr_code']");
+	
 	By Submit=By.xpath("//input[@type='submit']");
+	
 	By OK=By.xpath("//button[contains(text(),'OK')]");
+	
 	By AddBtn= By.xpath("//a[@id='add_btn']");
+	
 	By ViewBank = By.xpath("//a[contains(text(),'View Banks')]");
+	
 	By SearchBtn =By.xpath("//input[@type='search']");
+	
 	By Copy = By.xpath("//button[@class='dt-button buttons-copy buttons-html5']");
+	
 	By Excel = By.xpath("//button[@class='dt-button buttons-excel buttons-html5']");
+	
 	By cSv = By.xpath("//span[contains(text(),'CSV')]");
+	
 	By PDF = By.xpath("//span[contains(text(),'PDF')]");
 
 	public void BankPage() {
