@@ -38,6 +38,7 @@ public class screenShot {
 		return formate.format(currentdate);
 	}
 	
+	
 	public static void failedTestCase(String testMethodname) {
 		takeScreenShot(testMethodname );
 			

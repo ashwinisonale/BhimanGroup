@@ -15,22 +15,20 @@ import org.testng.Assert;
 import ru.yandex.qatools.ashot.AShot;
 
 public class Constants {
-	
-		
-		public static WebDriver driver;
-		public static Properties prop;
-		public static FileInputStream fis;
-		public static Actions action;
-		public static AShot ashot;
-		public  static Select select;
-        public static Alert alert;
-        public static Robot robot;
-        public static FluentWait wait;
-        public static WebElement element;
-        
-        
-        
-     
-	}
+
+
+	public static WebDriver driver;
+	public static Properties prop;
+	public static FileInputStream fis;
+	public static Actions action;
+	public static AShot ashot;
+	public  static Select select;
+	public static Alert alert;
+	public static Robot robot;
+	public static FluentWait wait;
+	public static WebElement element;
+
+
+}
 
 
