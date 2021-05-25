@@ -26,6 +26,7 @@ public class MasterTest extends MainBase{
 		master = PageFactory.initElements(Constants.driver, MasterPage.class);
 		
 	}
+	
 	@Test(priority=1)
 	public void ClickOnMasterTabTest(){	
 		master.clickOnMasterTab();
@@ -40,8 +41,6 @@ public class MasterTest extends MainBase{
 		master.clickOnProjectsTab();
 		
 	}
-
-
 
 
 	@AfterClass

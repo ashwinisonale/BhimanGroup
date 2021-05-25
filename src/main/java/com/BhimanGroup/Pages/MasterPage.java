@@ -18,7 +18,7 @@ public class MasterPage{
 	By branches=By.xpath("//li[@class='nav-item']//a[contains(text(),'Branches')]");
 
 	By customers=By.xpath("//li[@class='nav-item']//a[contains(text(),'Customers')]");
-	
+
 	By brokers=By.xpath("//li[@class='nav-item']//a[contains(text(),'Brokers')]");
 
 	By vendors=By.xpath("//li[@class='nav-item']//a[contains(text(),'Vendors')]");
@@ -34,46 +34,45 @@ public class MasterPage{
 		Constants.action.moveToElement(Constants.driver.findElement(master)).build().perform();
 
 	}
-         public void clickOnUserTab() {
-		 Constants.driver.findElement(users).click();
+	public void clickOnUserTab() {
+		Constants.driver.findElement(users).click();
 
 	}	
+
 	public void clickOnBankTab() {
 		clickOnMasterTab();
 		Constants.driver.findElement(Bank).click();
 	}
-	
-	
+
 	public void clickOnBranchesTab() {
 		clickOnMasterTab();
 		
 		Constants.driver.findElement(branches).click();
 
 	}
+
 	public void clickOnCustomerTab() { 
 		clickOnMasterTab();
 		Constants.driver.findElement(customers).click();
 
-
 	}
+
 	public void clickOnBrokersTab() {
 		clickOnMasterTab();
 		Constants.driver.findElement(brokers).click();
-
 	}
 
 	public void clickOnVendorsTab() {
 		clickOnMasterTab();
 		Constants.driver.findElement(vendors).click();
-
-
 	}	
+
 	public void clickOnEnquiryTab() {
 		clickOnMasterTab();
 		Constants.driver.findElement(enquiry).click();
 
+	}
 
-	}	
 	public void clickOnProjectsTab() { 
 		clickOnMasterTab();
 		Constants.driver.findElement(projects).click();

@@ -13,12 +13,6 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Testutil {
-
-//	public static String excelFilePath = "src\\main\\java\\com\\"
-//			+ "BhimanaGroup\\testData\\BhimanGroup.xlsx";
-//	public static String sheetName = "login";
-	
-	//public static String sheetName = "masterTabFunction";
 	
 	public static Object[][] getValidInvalidTestDataFromExcel(String path, String sheetName,Integer colNumber) {
 		Object[][] data = null;

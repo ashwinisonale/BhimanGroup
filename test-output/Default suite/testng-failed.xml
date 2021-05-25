@@ -5,9 +5,8 @@
     <classes>
       <class name="com.BhimanGroup.tests.customerTest">
         <methods>
-          <include name="enterCustomerDetails"/>
+          <include name="customerPersonalDeatils" invocation-numbers="0 1 2"/>
           <include name="setUp"/>
-          <include name="clickOnCustomer"/>
         </methods>
       </class> <!-- com.BhimanGroup.tests.customerTest -->
     </classes>
