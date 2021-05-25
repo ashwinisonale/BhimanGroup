@@ -28,7 +28,6 @@ public class MasterTest extends MainBase{
 	public void ClickOnMasterTabTest(){	
 		master.clickOnMasterTab();
 		
-		 
 		master.clickOnUserTab();
 		master.clickOnBankTab();
 		master.clickOnBranchesTab();
@@ -39,8 +38,6 @@ public class MasterTest extends MainBase{
 		master.clickOnProjectsTab();
 		
 	}
-
-
 
 
 	@AfterClass

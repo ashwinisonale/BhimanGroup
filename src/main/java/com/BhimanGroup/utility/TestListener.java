@@ -10,59 +10,57 @@ public class TestListener extends screenShot implements ITestListener{
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		
+
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		
+
 		System.out.println("passed  testcases"+ result.getName());
 		try {
-		takeScreenShot(result.getMethod().getMethodName());
-		
+			takeScreenShot(result.getMethod().getMethodName());
+
 		}catch(Exception e) {
-			
+
 			e.printStackTrace();
 		}
-			
-		
-		
+
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		System.out.println("failed Test case"+result.getName());
-		
-	try {
-		
-		failedTestCase(result.getMethod().getMethodName());
-		
-	} catch (Exception e) {
-		
-		e.printStackTrace();
+
+		try {
+
+			failedTestCase(result.getMethod().getMethodName());
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
 	}
-	}
+
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		
-		
+
+
 	}
 
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		
+
 	}
 
 	@Override
 	public void onStart(ITestContext context) {
-		
-		
+
 	}
 
 	@Override
 	public void onFinish(ITestContext context) {
-		
+
 	}
-	
+
 
 }
