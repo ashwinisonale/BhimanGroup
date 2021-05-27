@@ -28,13 +28,13 @@ public class BranchesTest extends MainBase{
 		String pass=Constants.prop.getProperty("password");
 		loginFlow(user, pass);
 		branchPage=PageFactory.initElements(Constants.driver, BranchesPage.class);
+		masterPage.clickOnMasterTab();
 	}
 
 
 	@Test(priority=1, dataProvider = "BranchDetails")
 	public void addBranchDetailsTest(String BranchName, String Address, String City,
-			String ContactNumber, String AlternateContactNumber, String EmailId) {
-		masterPage.clickOnMasterTab();
+			    String ContactNumber, String AlternateContactNumber, String EmailId) {
 		masterPage.clickOnBranchesTab();
 		branchPage.populateData(BranchName, Address, City, ContactNumber, AlternateContactNumber, EmailId);
 		branchPage.clickOnSubmit();
@@ -54,7 +54,6 @@ public class BranchesTest extends MainBase{
 
 	@Test(priority=2)
 	public void searchRecordTest() {
-		masterPage.clickOnMasterTab();
 		masterPage.clickOnBranchesTab();
 		String searchKeyword = "Pune";
 		branchPage.clickOnSearchBoxTextbox(searchKeyword);
