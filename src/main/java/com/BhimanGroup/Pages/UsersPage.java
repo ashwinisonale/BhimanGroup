@@ -196,7 +196,10 @@ public class UsersPage {
 		
 		Constants.driver.findElement(DeleteButton).click();
 	}
-
+	
+public void CheckOut() {
+	
+}
 
 
 }
