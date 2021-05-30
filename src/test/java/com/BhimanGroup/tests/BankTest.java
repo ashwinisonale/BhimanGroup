@@ -15,6 +15,7 @@ import com.BhimanGroup.Pages.MasterPage;
 import com.BhimanGroup.mainBase.Constants;
 import com.BhimanGroup.mainBase.MainBase;
 import com.BhimanGroup.utility.Testutil;
+import com.BhimanGroup.utility.screenShot;
 
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
@@ -22,6 +23,8 @@ import ru.yandex.qatools.ashot.Screenshot;
 public class BankTest extends MainBase{
 	MasterPage master =new MasterPage();
 	BankPage bank= new BankPage();
+	screenShot screen = new screenShot();
+
 
 
 
@@ -81,8 +84,9 @@ public class BankTest extends MainBase{
 	@Test(priority=3)
 	public void NewScreenshot() {
       
+		screen.takeScreenShot("");
 
-		AShot ashot=new AShot();
+		/*AShot ashot=new AShot();
 		Screenshot sc=ashot.takeScreenshot(Constants.driver);
 
 		try {
@@ -90,7 +94,7 @@ public class BankTest extends MainBase{
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 
 	}
 
