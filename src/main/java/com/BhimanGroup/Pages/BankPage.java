@@ -91,7 +91,5 @@ public class BankPage extends MainBase{
 		Constants.driver.findElement(PDF).click();
 	}
 	  
-
-
 }
 
