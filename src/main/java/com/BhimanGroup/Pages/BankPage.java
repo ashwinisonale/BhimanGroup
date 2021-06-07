@@ -42,8 +42,6 @@ public class BankPage extends MainBase{
 	
 	By ViewBank = By.xpath("//a[contains(text(),'View Banks')]");
 	
-	By ViewBtn = By.xpath("//i[@class=' fa fa-encil']");
-	
 	By SearchBtn =By.xpath("//input[@type='search']");
 	
 	By Copy = By.xpath("//button[@class='dt-button buttons-copy buttons-html5']");
@@ -81,8 +79,6 @@ public class BankPage extends MainBase{
 		Constants.driver.findElement(AddBtn).click();
 
 		Constants.driver.findElement(ViewBank).click();
-		
-		Constants.driver.findElement(ViewBtn).click();
 
 		Constants.driver.findElement(SearchBtn).sendKeys("Saraswat Bank");
 
@@ -94,7 +90,7 @@ public class BankPage extends MainBase{
 
 		Constants.driver.findElement(PDF).click();
 	}
-	
+	  
 
 
 }

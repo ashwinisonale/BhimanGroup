@@ -1,8 +1,4 @@
 package com.BhimanGroup.tests;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterClass;
@@ -17,16 +13,10 @@ import com.BhimanGroup.mainBase.MainBase;
 import com.BhimanGroup.utility.Testutil;
 import com.BhimanGroup.utility.screenShot;
 
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
-
 public class BankTest extends MainBase{
 	MasterPage master =new MasterPage();
 	BankPage bank= new BankPage();
 	screenShot screen = new screenShot();
-
-
-
 
 
 	public BankTest() {
@@ -48,7 +38,7 @@ public class BankTest extends MainBase{
 
 	@Test(priority=1)
 	public void ClickOnMasterTab() {
-		
+
 		master.clickOnMasterTab();
 		master.clickOnBankTab();
 
@@ -56,12 +46,10 @@ public class BankTest extends MainBase{
 	}
 
 
-
-
 	@Test(priority=2,dataProvider="InValidBankTestData")
 	public void InValidBankCredentialsTest(String BankName, String AccountHolderName,String AccountNo, String BankaccountType,String IFSCCode,String MIRCCode) {
 		bank.executeBankFlow(BankName,AccountHolderName,AccountNo,BankaccountType,IFSCCode,MIRCCode);	
-		
+
 		Constants.driver.switchTo().alert().accept();
 		try {
 			Thread.sleep(30000);
@@ -69,7 +57,7 @@ public class BankTest extends MainBase{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	@DataProvider(name = "InValidBankTestData")
@@ -78,24 +66,13 @@ public class BankTest extends MainBase{
 		String sheetName = "Bank";
 		Integer colNumber=6;
 		return Testutil.getValidInvalidTestDataFromExcel(excelFilePath, sheetName, colNumber);
-	
+
 	}
-  
+
 	@Test(priority=3)
 	public void NewScreenshot() {
-      
+
 		screen.takeScreenShot("");
-
-		/*AShot ashot=new AShot();
-		Screenshot sc=ashot.takeScreenshot(Constants.driver);
-
-		try {
-			ImageIO.write(sc.getImage(),"PNG", new File("D:\\Selenium java prog\\BhimanGroup\\src\\main\\java\\Screenshots\\bank_Screenshot"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-
 	}
 
 
