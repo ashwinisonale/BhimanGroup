@@ -56,6 +56,20 @@ public class UsersPage {
 	By DeleteButton=By.xpath("//i[@class=' fa fa-trash']");
 
 
+	@FindBy(xpath="//button[@class='dt-button buttons-copy buttons-html5']")
+	WebElement CopyButton;
+
+	@FindBy(xpath="//button[@class='dt-button buttons-excel buttons-html5']")
+	WebElement ExcelButton;
+
+	@FindBy(xpath="//button[@class='dt-button buttons-csv buttons-html5']")
+	WebElement CsvButton;
+
+	@FindBy(xpath="//button[@class='dt-button buttons-pdf buttons-html5']")
+	WebElement PdfButton;
+
+	@FindBy(xpath="//button[@class='dt-button buttons-print']")
+	WebElement PrintButton;
 
 
 
@@ -70,7 +84,7 @@ public class UsersPage {
 	}
 	public void userPagePersonalDetails(String Name,String MobileNumber,String EmailId,String Role,String JoiningDate,String BloodGroup) {
 		Constants.driver.findElement(name).sendKeys(Name);
-		Constants.driver.findElement(mobileNo).sendKeys(MobileNumber);
+	Constants.driver.findElement(mobileNo).sendKeys(MobileNumber);
 		Constants.driver.findElement(email).sendKeys(EmailId);
 
 		select=new Select(Constants.driver.findElement(role));
@@ -83,8 +97,8 @@ public class UsersPage {
 
 
 		Constants.driver.findElement(bloodGroup).click();
-		Select select1=new Select(Constants.driver.findElement(bloodGroup));
-		select1.selectByVisibleText(BloodGroup);	
+		select=new Select(Constants.driver.findElement(bloodGroup));
+		select.selectByVisibleText(BloodGroup);	
 		// Constants.select.selectByVisibleText("O positive");
 	}
 
@@ -114,8 +128,8 @@ public class UsersPage {
 
 	public void usersOtherDetails(String Password,String ConfirmPassword) {
 
-		Select select2=new Select(Constants.driver.findElement(usersStaus));
-		select2.selectByVisibleText("Active");
+		select=new Select(Constants.driver.findElement(usersStaus));
+		select.selectByVisibleText("Active");
 
 		Constants.driver.findElement(userPassword).sendKeys(Password);
 		Constants.driver.findElement(usersConfirmPassword).sendKeys(ConfirmPassword);
@@ -196,10 +210,24 @@ public class UsersPage {
 		
 		Constants.driver.findElement(DeleteButton).click();
 	}
-	
-public void CheckOut() {
-	
-}
 
+	public void CopyButtonOnUsersPage() {
+		CopyButton.click();
+	}
 
+	public void ExcelbuttonOnUsersPage() {
+		ExcelButton.click();
+	}
+
+	public void cSvButtonOnUsersPage() {
+		CsvButton.click();
+	}
+
+	public void PdfButtonOnUsersPage() {
+		PdfButton.click();
+		
+	}
+	public void PrintButtonOnUsersPage() {
+		PrintButton.click();
+	}
 }

@@ -44,20 +44,20 @@ public class UsersTest extends MainBase {
 		implicitWait();
 		userPage.AddUserButtonTab();
 	}
-	
-	
 
-//	@Test(priority=2)
-//	public void usersFormDetailsPageTest()
-//	{
-//		userPage.userPagePersonalDetails();
-//		userPage.usersBankDetails();
-//		implicitWait();
-//		userPage.userDocuments();
-//		implicitWait();
-//		userPage.usersFatherDetails();
-//		userPage.usersOtherDetails();
-//		userPage.userSubmitTab();
+
+
+	//	@Test(priority=2)
+	//	public void usersFormDetailsPageTest()
+	//	{
+	//		userPage.userPagePersonalDetails();
+	//		userPage.usersBankDetails();
+	//		implicitWait();
+	//		userPage.userDocuments();
+	//		implicitWait();
+	//		userPage.usersFatherDetails();
+	//		userPage.usersOtherDetails();
+	//		userPage.userSubmitTab();
 
 	//@Test(priority=2,dataProvider="UsersDataForNewRecords")
 	public void usersFormDetailsPageTest(String Name,String MobileNumber,String EmailId,String Role,
@@ -85,8 +85,8 @@ public class UsersTest extends MainBase {
 		try {
 			if(Constants.driver.findElement(By.cssSelector("#view_btn")).isDisplayed())
 			{		
-			Constants.driver.findElement(By.cssSelector("#view_btn")).click();
-			Constants.driver.findElement(By.cssSelector("#add_btn")).click();
+				Constants.driver.findElement(By.cssSelector("#view_btn")).click();
+				Constants.driver.findElement(By.cssSelector("#add_btn")).click();
 			}
 		}
 		catch(Exception e)
@@ -96,7 +96,7 @@ public class UsersTest extends MainBase {
 			Constants.driver.findElement(By.xpath("//button[normalize-space()='Add User']")).click();
 
 		}
-	
+
 	}
 
 	//@DataProvider(name = "UsersDataForNewRecords")
@@ -114,25 +114,48 @@ public class UsersTest extends MainBase {
 		// implicitWait()
 		userPage.searchButtonOnUsersPage("nagesh");
 	}
-	
+
 	//@Test(priority = 4)
 	public void clickOnViewRecordButtonTest() {
 		userPage.clickOnDeleteRecordButton();
 	}
-	
+
 	//@Test(priority=5)	
 	public void clickOnEditRecordButtonTest(){
 		userPage.clickOnEditRecordButton();
 		userPage.userSubmitTab();
-		
+
 		//screen.takeScreenShot("");
-}
+	}
+	@Test(priority=6)
 	public void clickOnDeleteRecordButtonTest() {
 		userPage.clickOnDeleteRecordButton();
 	}
+
+	@Test(priority=7)
+	public void ClickOnCopyButtonOnBrokersPage() {
+		userPage.CopyButtonOnUsersPage();
+	}
+
+	@Test(priority=8)
+	public void clickOnExcelbuttonOnBrokersPage() {
+		userPage.ExcelbuttonOnUsersPage();
+	}
 	
-	
-	
+	@Test(priority=9)
+	public void ClickOncSvButtonOnusersPage() {
+		userPage.cSvButtonOnUsersPage();
+
+	}
+	@Test(priority=10)
+	public void ClickOnPdfButtonOnUsersPage() {
+		userPage.PdfButtonOnUsersPage();
+	}
+
+	@Test(priority=11)
+	public void ClickOnPrintButtonOnUsersPage() {
+		userPage.PrintButtonOnUsersPage();
+	}
 
 	@AfterClass
 	public void closeWindow() {
