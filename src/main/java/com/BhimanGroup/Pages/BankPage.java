@@ -98,11 +98,11 @@ public class BankPage extends MainBase{
 		Constants.driver.findElement(Submit).click();
 	public void clickOkBtn() {
 		Constants.driver.findElement(OK).click();
-	}
+	}*/
 	
 	public void clickAddBtn() {
 		Constants.driver.findElement(AddBtn).click();
-	}*/
+	}
 
 
 }
