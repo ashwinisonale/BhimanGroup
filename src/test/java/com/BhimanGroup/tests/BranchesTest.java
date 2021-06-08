@@ -1,7 +1,9 @@
 package com.BhimanGroup.tests;
 
+import java.io.File;
 import java.util.Map;
 
+import org.apache.regexp.recompile;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -32,7 +34,7 @@ public class BranchesTest extends MainBase{
 	}
 
 
-	@Test(priority=1, dataProvider = "BranchDetails")
+	//@Test(priority=1, dataProvider = "BranchDetails")
 	public void addBranchDetailsTest(String BranchName, String Address, String City,
 			    String ContactNumber, String AlternateContactNumber, String EmailId) {
 		masterPage.clickOnBranchesTab();
@@ -52,7 +54,7 @@ public class BranchesTest extends MainBase{
 
 	}
 
-	@Test(priority=2)
+	//@Test(priority=2)
 	public void searchRecordTest() {
 		masterPage.clickOnBranchesTab();
 		String searchKeyword = "Pune";
@@ -66,12 +68,36 @@ public class BranchesTest extends MainBase{
 				Assert.assertTrue(false,"Search Failed.");
 
 		}
+	}
 
+//	public boolean isFileDownloaded(String downloadPath, String fileName) {
+//		File dir = new File(downloadPath);
+//		File[] dirContents = dir.listFiles();
+//
+//		for (int i = 0; i < dirContents.length; i++) {
+//			if (dirContents[i].getName().equals(fileName)) {
+//				// File has been found, it can now be deleted:
+//				dirContents[i].delete();
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
+	
+	@Test(priority=3)
+	public void downloadBranchesDetailsInExcelFormateTest() {
+		masterPage.clickOnBranchesTab();
+		branchPage.clickOnExcelButton();
+		String downloadPath= "C:\\Users\\Lenovo\\Downloads";
+		String fileName="Branches";
+		implicitWait();
+		explicitWait();
+		System.out.println(Testutil.isFileDownloaded(downloadPath, fileName));
 	}
 	
 	@AfterClass
 	public void closeBrowser() {
-		tearDown();
+		//tearDown();
 	}
 
 }
