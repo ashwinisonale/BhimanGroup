@@ -90,7 +90,6 @@ public class BranchesTest extends MainBase{
 		branchPage.clickOnExcelButton();
 		String downloadPath= "C:\\Users\\Lenovo\\Downloads";
 		String fileName="Branches";
-		implicitWait();
 		explicitWait();
 		System.out.println(Testutil.isFileDownloaded(downloadPath, fileName));
 	}
