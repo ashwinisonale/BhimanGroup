@@ -89,7 +89,7 @@ public class BankTest extends MainBase{
 		try {
 			ImageIO.write(sc.getImage(),"PNG", new File("D:\\Selenium java prog\\BhimanGroup\\src\\main\\java\\Screenshots\\bank_Screenshot"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 
@@ -98,6 +98,7 @@ public class BankTest extends MainBase{
 
 	@AfterClass
 	public void closeBrowser() {
+		tearDown();
 	}
 
 

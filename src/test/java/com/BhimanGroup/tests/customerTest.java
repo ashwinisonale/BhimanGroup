@@ -65,12 +65,12 @@ public class customerTest extends MainBase{
 		{		
 		Constants.driver.findElement(By.xpath("//a[normalize-space()='View Customers']")).click();
 		Constants.driver.findElement(By.xpath("//a[contains(text(),'Add Customers')]")).click();
-		implicitWait(3);
+		//implicitWait(3);
 		}
 	}
 	catch(Exception e)
 	{
-		implicitWait(4);
+		//implicitWait(4);
 		Constants.driver.findElement(By.xpath("//a[contains(text(),'Add Customers')]")).click();
 		Constants.driver.findElement(By.xpath("//a[contains(text(),'Add Customers')]")).click();
 	}

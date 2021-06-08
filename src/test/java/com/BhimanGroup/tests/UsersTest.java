@@ -39,7 +39,7 @@ public class UsersTest extends MainBase {
 
 	}
 
-	//@Test(priority = 1)
+	@Test(priority = 1)
 	public void AddUserButtonTest() {
 		implicitWait();
 		userPage.AddUserButtonTab();
@@ -47,7 +47,7 @@ public class UsersTest extends MainBase {
 
 
 
-	//	@Test(priority=2)
+	//@Test(priority=2)
 	//	public void usersFormDetailsPageTest()
 	//	{
 	//		userPage.userPagePersonalDetails();

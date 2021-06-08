@@ -82,9 +82,10 @@ public class BrokersTest extends MainBase {
 		brokerspage.PrintButtonOnBorkersPage();
 	}
 	
+	
 	@AfterClass
 	public void closeWindow() {
-		//tearDown();
+		tearDown();
 	}
 
 }
