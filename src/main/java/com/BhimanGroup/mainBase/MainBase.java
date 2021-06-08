@@ -111,6 +111,9 @@ public class MainBase {
 			Constants.driver.close();
 		}
 
+		public void switchWindow() {
+			
+		}
 	}
 
 
